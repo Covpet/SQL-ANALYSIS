@@ -168,6 +168,7 @@ SELECT ename,sal from emp
 WHERE sal>'100'
 
 ![Dashboard](bar plot.PNG)
+
 ![BAR CHART SQL](https://github.com/Covpet/SQL-ANALYSIS/assets/148041100/2659fb5b-6daf-4be9-9027-d0731a182b4e)
 
 
@@ -176,6 +177,10 @@ WHERE sal>'100'
 SELECT sal, job from emp
 
 WHERE job= 'clerk'
+
+![Dashboard](bar plot.PNG)
+
+
 
 #### List the employees in the asc order of jobs of those who joined after the second half of 1981.
 
