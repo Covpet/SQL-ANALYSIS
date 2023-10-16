@@ -1,0 +1,78 @@
+CREATE TABLE dept(
+deptno INT PRIMARY KEY, dname varchar(30), dlocation varchar(30))
+
+CREATE TABLE emp (empno INT PRIMARY KEY, ename varchar(30), job varchar(30) , hiredate date, 
+mgr INT, time_stamp date , sal INT, commission INT, exitdate date, deptno INT FOREIGN KEY REFERENCES dept(deptno))
+
+--Question 1
+INSERT INTO dept
+values
+('10', 'ACCOUNTING', 'NEWYORK'),
+('20', 'RESEARCH', 'DALLAS'),
+('30', 'SALES', 'CHICAGO'),
+('40','OPERATIONS', 'BOSTON')
+SELECT * FROM dept
+SELECT * FROM emp
+
+--Question 2
+INSERT INTO emp
+values
+('7369', 'SMITH', 'CLERK', '1980-12-17', '7902', '2023-08-01', '800', '30', '1984-12-12', '20'),
+('7499', 'ALLEN', 'SALESMAN', '1981-02-20', '7698',	'2023-08-01','1600', '300', '1988-12-10', '30'),
+('7521', 'WARD', 'SALESMAN', '1981-02-22', '7698', '2023-08-01', '1250', '500','1986-01-12', '30'),
+('7566', 'JONES','MANAGER',	'1981-04-02','7839', '2023-08-01', '2975', '459','1988-02-07', '20'),
+('7654', 'MARTIN', 'SALESMAN', '1981-09-28', '7698', '2023-08-01', '1250', '1400', '1984-12-12', '30'),
+('7698', 'BLAKE', 'MANAGER', '1981-05-01', '7839', '2023-08-01', '2850', '459', '1986-05-01', '30'),
+('7782', 'CLARK', 'MANAGER', '1981-06-09', '7839', '2023-08-01', '2450', '67', '1985-08-22', '10'),
+('7788', 'SCOTT', 'ANALYST', '1982-12-09', '7566', '2023-08-01', '3000', '67', '1988-09-23', '20'),
+('7839', 'KING', 'PRESIDENT', '1981-11-17',	'5686',	'2023-08-01', '5000', '76', '1986-10-25', '10'),
+('7844', 'TURNER', 'SALESMAN', '1981-09-08', '7698', '2023-08-01', '1500', '0', '1989-10-28', '30'),
+('7876','ADAMS', 'CLERK', '1983-01-12',	'7788',	'2023-08-01','1100', '67', '1990-12-12', '20'),
+('7900', 'JAMES', 'CLERK', '1981-12-03', '7698', '2023-08-01','950', '65', '1985-03-17','30'),
+('7902', 'FORD', 'ANALYST', '1981-12-03', '7566', '2023-08-01','3000', '54', '1984-12-31', '20'),
+('7934', 'MILLAR', 'CLERK',	'1982-01-23', '7782', '2023-08-01', '1300', '67', '1983-07-29', '10')
+
+--Question 3
+SELECT*FROM emp
+SELECT DISTINCT job FROM emp
+ORDER BY job desc
+
+--Question 4
+SELECT * FROM emp
+WHERE commission > sal
+
+--Question 5
+SELECT empno, ename from emp
+WHERE job= 'CLERK' or job= 'ANALYST'
+ORDER BY empno DESC
+
+--Question 6
+SELECT ename,sal FROM emp
+GROUP BY empno
+HAVING sal > '3000'
+
+-- Question 7
+SELECT ename from emp
+WHERE LEN(ename)=5
+
+--Question 8
+SELECT ename from emp
+WHERE ename like 'S%' 
+and LEN(ename)=5 
+
+--Question 9
+SELECT sal from emp
+WHERE LEN(sal)=4 and sal like '%0'
+
+--Question 10
+SELECT ename,sal from emp
+WHERE sal>'100'
+
+--Question 11
+SELECT sal, job from emp
+WHERE job= 'clerk'
+
+--Question 12
+SELECT ename,job, hiredate from emp
+WHERE hiredate > ('1981-06-30')
+ORDER BY job ASC
