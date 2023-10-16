@@ -167,6 +167,10 @@ SELECT ename,sal from emp
 
 WHERE sal>'100'
 
+![Dashboard](bar plot.PNG)
+![BAR CHART SQL](https://github.com/Covpet/SQL-ANALYSIS/assets/148041100/2659fb5b-6daf-4be9-9027-d0731a182b4e)
+
+
 #### Salary trend for employees identifying as Clerk
 
 SELECT sal, job from emp
