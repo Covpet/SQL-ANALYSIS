@@ -4,8 +4,34 @@
 ### Project Name: SQL query analysis documentation
 ### Description: This is a sql anlysis of the emp table which has empno, ename, job, hiredate, mgr, timp_stamp, sal, commission, exitdate and deptno columns. Different insights and exploratory data analysis (EDA) was gotten from it.
 
+## Table Of Contents
+[Introduction](introduction)
+
+[Tools Used](tools-Used)
+
+[CREATING DATABASE SCHEMA](cREATING-DATABASE-SCHEMA)
+
+-[Database Schema](database-Schema)
+
+[Data Insertion](data-Insertion)
+
+-[dept table](dept-table)
+
+-[emp table](emp-table)
+
+[Questions and SQL queries ](questions-and-SQL-queries)
+
+[Data Visualization](data-Visualization)
+
+[Contribution](contribution)
+
+[Conclusions](conclusions)
+
 ## INTRODUCTION
 ### The dataset is an employee sample dataset which contains 2 tables, the emp table and dept table. The aim of the analysis is to understand what the employee structure of the company comprises, analyze and derive insights to answer crucial questions and to help make crucial and data driven decisions as they may arise.
+
+## Tools Used
+MySQL: All analysis including inserting, editing and visualization was done here.
 
 ## CREATING DATABASE SCHEMA
 The table 1 is the dept table which has columns deptno, dname and location. The primary key is deptno.
@@ -167,10 +193,9 @@ SELECT ename,sal from emp
 
 WHERE sal>'100'
 
-![Dashboard](bar plot.PNG)
+![Dashboard](Bar-Plot.PNG)
 
 ![BAR CHART SQL](https://github.com/Covpet/SQL-ANALYSIS/assets/148041100/2659fb5b-6daf-4be9-9027-d0731a182b4e)
-
 
 #### Salary trend for employees identifying as Clerk
 
@@ -178,9 +203,8 @@ SELECT sal, job from emp
 
 WHERE job= 'clerk'
 
-![Dashboard](bar plot.PNG)
-
-
+![Dashboard](Trendline.PNG)
+![SQL GRAPH 2](https://github.com/Covpet/SQL-ANALYSIS/assets/148041100/627a8eae-c868-49df-b5b9-8dc0b01a1f81)
 
 #### List the employees in the asc order of jobs of those who joined after the second half of 1981.
 
@@ -190,6 +214,50 @@ WHERE hiredate > ('1981-06-30')
 
 ORDER BY job ASC
 
+## Contribution
+***Department Data Insertion (Question 1)***: The SQL analysis begins with inserting data into the dept table, which stores information about different departments. This step populates the table with department names and locations, essential for organizing employee data.
+
+***Employee Data Insertion (Question 2)***: Data for employees is inserted into the emp table. This data includes employee numbers, names, job titles, hire dates, manager numbers, salary, commission, exit dates, and department numbers. This step sets the foundation for employee-related queries.
+
+***Distinct Job Titles (Question 3)***: The query to retrieve distinct job titles from the emp table shows that there are various job titles in the organization, providing insight into the diversity of roles among employees.
+
+***Employees with Commission > Salary (Question 4)***: This query identifies employees whose commission is greater than their salary. Such cases may be of interest for further analysis or adjustment of compensation structures.
+
+***Specific Job Titles (Question 5)***: The query filters employees with job titles 'CLERK' or 'ANALYST'. It demonstrates how to extract specific subsets of employees based on their job roles.
+
+***High-Earning Employees (Question 6)***: The query groups employees by employee number and selects those with a salary greater than 3000. This query can be useful for identifying top earners in the organization.
+
+***Employees with 5-Character Names (Question 7)***: The query identifies employees with names that are exactly 5 characters long. It might be relevant for identifying employees with shorter names for specific purposes.
+
+***Employees Whose Names Start with 'S' and Are 5 Characters Long (Question 8)***: This query combines two criteria, selecting employees with names starting with 'S' and having exactly 5 characters. This could be useful for a specific subset of employees.
+
+***Salaries Ending in '0' (Question 9)***: The query identifies employees with salaries that end in '0'. This can help identify employees with round-numbered salaries.
+
+***Employees with Salaries > 100 (Question 10)***: The query selects employees with salaries greater than 100. This is a very broad filter, as almost all employees likely have salaries above 100.
+
+***Employees with Job Title 'Clerk' (Question 11)***: This query filters employees by their job title, specifically selecting employees with the job title 'Clerk.'
+
+***Employees Hired After June 30, 1981 (Question 12)***: The final query selects employees hired after June 30, 1981. This could be useful for analyzing newer hires in the organization.
+
+Overall, the analysis provides insights into the diversity of job roles, salary structures, and specific subsets of employees within the organization. Depending on the organization's needs, the findings and queries can be used for various HR and data analysis purposes.
+
+## Conclusion
+
+In this SQL analysis, we performed various operations on the emp and dept tables to extract valuable insights from the data. We began by populating the dept table with information about different departments within an organization and followed by inserting data about employees into the emp table. With a structured dataset in place, we posed several questions and executed SQL queries to gain insights into the employee data. The findings and insights from the analysis are as follows:
+
+We discovered a diverse range of job titles within the organization, highlighting the variety of roles employees hold.
+
+By identifying employees whose commission exceeds their salary, we highlighted potential areas for compensation adjustments or further analysis.
+
+Queries allowed us to select employees with specific job titles such as 'CLERK' and 'ANALYST,' helping categorize and analyze specific subsets of employees.
+
+We identified high-earning employees by selecting those with salaries greater than 3000, providing a glimpse of top earners.
+
+Additional queries enabled us to select employees with specific characteristics, such as those with 5-character names or salaries ending in '0.'
+
+We also focused on employees hired after a specific date, potentially useful for analyzing newer hires.
+
+These findings provide valuable insights into the organization's employee data, enabling various analytical and HR-related applications.
 
 
 
